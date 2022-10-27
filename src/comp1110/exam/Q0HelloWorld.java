@@ -1,4 +1,4 @@
-package comp1110.mse;
+package comp1110.exam;
 
 public class Q0HelloWorld {
     /**

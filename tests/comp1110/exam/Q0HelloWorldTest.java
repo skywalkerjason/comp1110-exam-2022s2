@@ -1,4 +1,4 @@
-package comp1110.mse;
+package comp1110.exam;
 
 import comp1110.StdIOTest;
 import org.junit.jupiter.api.*;
