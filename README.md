@@ -24,3 +24,8 @@ exam server when the exam ends**. You must commit and push your completed
 work to the server or it will not be marked. Do not leave committing and
 pushing to the last minute! We will not be providing any additional time
 for late commits/pushes.
+
+----
+
+This repository contains one practice question
+(`src/comp1110/exam/Q0HelloWorld.java`), and a unit test for this question.

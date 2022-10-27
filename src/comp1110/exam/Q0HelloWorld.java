@@ -1,4 +1,4 @@
-package comp1110.exam;
+package comp1110.mse;
 
 public class Q0HelloWorld {
     /**
@@ -6,7 +6,6 @@ public class Q0HelloWorld {
      * @param args
      */
     public static void main(String[] args) {
-        System.out.println("Hello World");
         // FIXME
     }
 }

@@ -1,0 +1,18 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Q0HelloWorldTest" type="JUnit" factoryName="JUnit">
+    <module name="comp1110-mse" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="comp1110.mse.Q0HelloWorld" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <option name="PACKAGE_NAME" value="comp1110.mse" />
+    <option name="MAIN_CLASS_NAME" value="comp1110.mse.Q0HelloWorldTest" />
+    <option name="METHOD_NAME" value="" />
+    <option name="TEST_OBJECT" value="class" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
