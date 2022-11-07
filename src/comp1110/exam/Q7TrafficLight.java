@@ -52,7 +52,6 @@ public class Q7TrafficLight extends Application {
 	goButton.setOnAction(new EventHandler<ActionEvent>() {
 		@Override
 		public void handle(ActionEvent e) {
-            setColor((Shape) signals.getChildren().get(1),GREEN);
 		    // FIXME: complete this event handler
 		}
 	    });
@@ -62,7 +61,6 @@ public class Q7TrafficLight extends Application {
 	stopButton.setOnAction(new EventHandler<ActionEvent>() {
 		@Override
 		public void handle(ActionEvent e) {
-            setColor((Shape) signals.getChildren().get(0),RED);
 		    // FIXME: complete this event handler
 		}
 	    });
@@ -72,8 +70,6 @@ public class Q7TrafficLight extends Application {
 	resetButton.setOnAction(new EventHandler<ActionEvent>() {
 		@Override
 		public void handle(ActionEvent e) {
-            setColor((Shape) signals.getChildren().get(0),GRAY);
-            setColor((Shape) signals.getChildren().get(1),GRAY);
 		    // FIXME: complete this event handler
 		}
 	    });

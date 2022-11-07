@@ -1,0 +1,16 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Q4Sources (scaling test)" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="comp1110.exam.Q4Sources" />
+    <module name="comp1110-exam" />
+    <option name="VM_PARAMETERS" value="-ea" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="comp1110.exam.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

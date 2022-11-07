@@ -1,8 +1,6 @@
 package comp1110.exam;
 
 import org.junit.jupiter.api.Test;
-import org.w3c.dom.ls.LSOutput;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public class Q3ScheduleTest {

@@ -1,10 +1,6 @@
 package comp1110.exam;
 
 // static methods used by scaling test
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-
 import static java.lang.Math.pow;
 import static java.lang.Math.min;
 import static java.lang.Math.max;
@@ -53,23 +49,8 @@ import static comp1110.exam.Q4SourcesTest.testCounts1;
  * (provided in the test class).
  */
 public class Q4Sources {
-	int id;
-	HashMap<Integer,Pipe> sources = new HashMap<>();
-	class Pipe {
-		Integer id=-1;
-		List<Integer> inConnections;
-		List<Integer> outConnections;
-
-		public Pipe(int id) {
-			this.id = id;
-			inConnections = new ArrayList<>();
-			outConnections = new ArrayList<>();
-		}
-
-	}
 
     public Q4Sources() {
-
     }
   
     /**
@@ -77,15 +58,8 @@ public class Q4Sources {
      * The method should return the id of the new pipe.
      */
     public int add() {
-		sources.put(id,new Pipe(id));
-		if (id ==-1){
-			id = 0;
-			id++;
-			return 0;
-		}
-		id++;
 	// FIXME
-	return id-1;
+	return -1;
     }
     
     /**
@@ -102,20 +76,6 @@ public class Q4Sources {
      * the network and return the id of the new pipe.
      */
     public int addFrom(int fromPipeId) {
-		if (sources.containsKey(fromPipeId)){
-			if (sources.get(fromPipeId).outConnections.size()<=2){
-				sources.get(fromPipeId).outConnections.add(id);
-				sources.put(id,new Pipe(id));
-				sources.get(id).inConnections.add(fromPipeId);
-				if (id ==-1){
-					id = 0;
-					id++;
-					return 0;
-				}
-				id++;
-				return id-1;
-			}
-		}
 	// FIXME
 	return -1;
     }
@@ -134,20 +94,6 @@ public class Q4Sources {
      * the network and return the id of the new pipe.
      */
     public int addTo(int toPipeId) {
-		if (sources.containsKey(toPipeId)){
-			if (sources.get(toPipeId).inConnections.size()<=2){
-				sources.get(toPipeId).inConnections.add(id);
-				sources.put(id,new Pipe(id));
-				sources.get(id).outConnections.add(toPipeId);
-				if (id ==-1){
-					id = 0;
-					id++;
-					return 0;
-				}
-				id++;
-				return id-1;
-			}
-		}
 	// FIXME
 	return -1;
     }
@@ -160,27 +106,6 @@ public class Q4Sources {
      * has already been removed) then the method should not do anything.
      */
     public void remove(int pipeId) {
-		if (sources.containsKey(pipeId)){
-			sources.remove(pipeId);
-			for (var v:sources.values()){
-				List <Integer> newIN = new ArrayList<>();
-				for (var in :v.inConnections ){
-					if (in!=pipeId){
-						newIN.add(in);
-					}
-				}
-				v.inConnections=newIN;
-
-				List <Integer> newOUT = new ArrayList<>();
-				for (var out :v.outConnections ){
-					if (out!=pipeId){
-						newOUT.add(out);
-					}
-				}
-				v.outConnections=newOUT;
-
-			}
-		}
 	// FIXME
     }
 
@@ -190,14 +115,8 @@ public class Q4Sources {
      * A source is a pipe that has no incoming connections.
      */
     public int nSources() {
-		int num  = 0;
-		for (var v: sources.values()){
-			if (v.inConnections.size()==0){
-				num++;
-			}
-		}
 	// FIXME
-	return num;
+	return 0;
     }
 
     /**
