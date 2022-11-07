@@ -119,12 +119,44 @@ class StringOperator extends Q6StringPattern {
     }
 
     public boolean equals(Object other) {
+        if (other instanceof StringOperator){
+            return Objects.equals(this.type,((StringOperator) other).type)&&Objects.equals(this.first,((StringOperator) other).first)&&Objects.equals(this.second,((StringOperator) other).second);
+        }
         // FIXME
         return false;
     }
 
     public int hashCode() {
+        int code = 17;
+        char[] cArray;
+        if (type!=null){
+            cArray=type.toString().toCharArray();
+            if (cArray.length>0){
+                for (char c : cArray) {
+                    code = 33 * code + c;
+                }
+            }
+        }
+        char[] cArray2;
+        if (first!=null){
+            cArray2=first.toString().toCharArray();
+            if (cArray2.length>0){
+                for (char c : cArray2) {
+                    code = 33 * code + c;
+                }
+            }
+        }
+        char[] cArray3;
+        if (second!=null){
+            cArray3=second.toString().toCharArray();
+            if (cArray3.length>0){
+                for (char c : cArray3) {
+                    code = 33 * code + c;
+                }
+            }
+        }
+        return code;
         // FIXME
-        return 0;
+
     }
 }
