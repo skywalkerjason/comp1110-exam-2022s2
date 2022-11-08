@@ -36,7 +36,13 @@ public class Q2ThreeOdd {
      * number that is not a ThreeOdd number, * -1 in any other case.
      */
     public static int threeOdd(String number) {
+        //FIXME: implement this method
+
+
         if (number == null || number.length() == 0) {
+            return -1;
+        }
+        if (number.charAt(0) == '-') {
             return -1;
         }
         try {
@@ -44,24 +50,48 @@ public class Q2ThreeOdd {
         } catch (Exception e) {
             return -1;
         }
-        if (number.charAt(0) != '-') {
-            if (Integer.parseInt(number) % 2 != 0 && Integer.parseInt(number) % 3 == 0) {
 
-
-                if (threeOdd(number.substring(1, number.length() - 1)) != -1) {
-                    String[] a = number.split("");
-                    int sum = 0;
-                    for (int i = 0; i < number.length(); i++) {
-                        if (Integer.parseInt(a[i]) % 2 == 0) {
-                            sum += Integer.parseInt(a[i]);
-                        }
-                    }
-                    return sum;
-                }
-
+        int odd = 0;
+        int even = 0;
+        for (int i = 0; i < number.length(); i++) {
+            String[] a = number.split("");
+            int digit = Integer.parseInt(a[i]);
+            if (digit % 2 != 0) {
+                odd += digit;
+            } else {
+                even += digit;
             }
         }
-        //FIXME: implement this method
-        return -1;
+
+        if (!isThreeOdd(number)) {
+            return odd;
+        }
+        return even;
+
+
+    }
+
+    static boolean isThreeOdd(String number) {
+        if (number == null || number.length() == 0) {
+            return false;
+        }
+        if (number.charAt(0) == '-') {
+            return false;
+        }
+        try {
+            Integer.parseInt(number);
+        } catch (Exception e) {
+            return false;
+        }
+        int i = Integer.parseInt(number);
+        if (i % 3 != 0) {
+            return false;
+        }
+
+        if (number.length() > 2) {
+            return isThreeOdd(number.substring(1, number.length() - 1));
+        }
+
+        return true;
     }
 }
