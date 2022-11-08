@@ -76,13 +76,14 @@ public class Q3Schedule {
           if (!used.contains(i)){
               if (max+duration[i]<=max_schedule_time&&notExclude(exclusions,task1,i)){
                   used.add(i);
-                  if(!findMax(duration,max_schedule_time,exclusions,used,max+duration[i],i)){
+                  if(!findMax(duration,max_schedule_time,exclusions,used,max+duration[i],i,findmax)){
                   used.remove(i);}
                   findmax[i]=true;
                   return true;
               }
           }
       }
+      return false;
     }
     public static boolean notExclude(int[][]exclusion,int task1,int task2){
         for (int i = 0;i<exclusion[task1].length;i++){
