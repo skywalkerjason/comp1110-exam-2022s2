@@ -43,56 +43,12 @@ public class Q3Schedule {
      */
     public static boolean[] maximalSchedule(int[] duration, int max_schedule_time, int[][] exclusions) {
         boolean[] findmax = new boolean[duration.length];
-        List<Integer> used = new ArrayList<>();
-        int num = 0;
-        for (int i = 0 ;i < duration.length;i++){
-            if (findMax(duration,max_schedule_time,exclusions,used,duration[i],i,findmax)){
-                int newnum = 0;
-                if (num==0){
-                    for (int j = 0; j< findmax.length;j++){
-                        if (findmax[j]){
-                            num+=duration[j];
-                        }
-                    }
-                }else {
-                    for (int j = 0; j< findmax.length;j++){
-                        if (findmax[j]){
-                            newnum+=duration[j];
-                        }
-                    }
-                }
-
-            }
-        }
 	// FIXME
 	return findmax;
     }
 
-    public static boolean findMax (int[] duration, int max_schedule_time, int[][] exclusions, List<Integer> used,Integer max ,int task1,boolean[]findmax){
-        if (max>=max_schedule_time){
-            return false;
-        }
-      for (int i = 0; i< duration.length;i++){
-          if (!used.contains(i)){
-              if (max+duration[i]<=max_schedule_time&&notExclude(exclusions,task1,i)){
-                  used.add(i);
-                  if(!findMax(duration,max_schedule_time,exclusions,used,max+duration[i],i,findmax)){
-                  used.remove(i);}
-                  findmax[i]=true;
-                  return true;
-              }
-          }
-      }
-      return false;
-    }
-    public static boolean notExclude(int[][]exclusion,int task1,int task2){
-        for (int i = 0;i<exclusion[task1].length;i++){
-            if (exclusion[task1][i]==task2){
-                return false;
-            }
-        }
-        return true;
-    }
+
+ 
 
 
 
