@@ -31,9 +31,9 @@ public class Q1AverageInRange {
     public static double averageInRange(int[] in, int start, int end) {
         int count = 0;
         int sum=0;
-        for (int i = 0; i<in.length;i++ ){
-            if (in[i]>=start&&in[i]<=end){
-                sum+=in[i];
+        for (int j : in) {
+            if (j >= start && j <= end) {
+                sum += j;
                 count++;
             }
         }
